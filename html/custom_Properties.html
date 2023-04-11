@@ -5,8 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom_Properties 예시</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <style>
+        :root {
+            --main-color: #f00;
+            --main-bg: #0f0;
+            --border-color: #ff0;
+            --header-height: 70px;
+            --content-padding: 10px 20px;
+            --base-line-height: 1.5;
+            --transition-duration: 0.5s;
+            --external-link: "external link";
+            --margin-top: calc(2vh + 20px);
+            /* 유효 커스텀 속성은 후에 JavaScript에서 재사용될 수 있다. */
+            --foo: if(x > 5) this.width = 10;
+        }
+    </style>
+
 </body>
 </html>

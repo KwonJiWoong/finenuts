@@ -1,8 +1,7 @@
-# finenuts
+# finenuts - 권지웅
 
-## 권지웅
-
-### custom property 사용법
+## custom property 예시
+1. css 소스
 
 ```
 :root {
@@ -18,5 +17,6 @@
     /* 유효 커스텀 속성은 후에 JavaScript에서 재사용될 수 있다. */
     --foo: if(x > 5) this.width = 10;
 }
-<https://custom_Properties.html>
 ```
+2. 해당 예시 주소
+<https://kwonjiwoong.github.io/finenuts/html/custom_Properties.html>
