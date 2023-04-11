@@ -1,7 +1,5 @@
 # finenuts
-
 ## 권지웅
-
 ### custom property 사용법
 
 ```
@@ -18,5 +16,5 @@
     /* 유효 커스텀 속성은 후에 JavaScript에서 재사용될 수 있다. */
     --foo: if(x > 5) this.width = 10;
 }
-<https://custom_Properties.html>
 ```
+<https://custom_Properties.html>
