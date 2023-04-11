@@ -11,18 +11,58 @@
     <style>
         :root {
             --main-color: #f00;
-            --main-bg: #0f0;
-            --border-color: #ff0;
+            --main-bg: rgb(0, 217, 255);
+            --border-color: rgb(0, 72, 131);
             --header-height: 70px;
-            --content-padding: 10px 20px;
+            --content-gap: 10px;
             --base-line-height: 1.5;
-            --transition-duration: 0.5s;
-            --external-link: "external link";
-            --margin-top: calc(2vh + 20px);
-            /* 유효 커스텀 속성은 후에 JavaScript에서 재사용될 수 있다. */
-            --foo: if(x > 5) this.width = 10;
+            --font-bold : 700;
         }
+        
+        *{margin:0; padding:0; border:0;}
+        a{display:block; color:inherit; text-decoration:none;}
+        ul, ol{list-style: none;}
+        li{display:block;}
+        html,body{line-height:var(--base-line-height);}
+
+        header{height:var(--header-height, 70px); line-height:calc(var(--header-height, 70px) - 20px); border-bottom:solid 2px var(--border-color, --main-bg, --main-color);}
+        header ul{display:flex; justify-content:center; gap:var(--content-gap, 10px);}
+        /* 아래 --border-color 처럼 재사용(해당 부분들 가능) / 중간에 새로 정의 가능  */
+        header ul > li{
+            --new-color:rgb(0, 189, 72);
+            --border-color: rgb(131, 90, 0);
+            border:solid 2px var(--border-color)
+        }
+
+        header ul > li a{
+            margin:5px;
+            border:solid 2px var(--border-color);
+            color:var(--new-color, --main-color);
+        }
+
+        .section_wrap{display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr;}
+        .section_wrap section{display:flex; align-items:center; justify-content:center; width:150px; height:150px; margin:0 auto;}
+        /* 위 --new-color는 지역변수처럼 적용 (header ul > li 이하 요소들에만) */
+        .section_wrap section:nth-of-type(1){color:var(--new-color, #000); font-weight: var(--font-bold , normal);}
     </style>
 
+    <div class="wrapper">
+        <header>
+            <ul>
+                <li><a href="#">1번째 메뉴</a></li>
+                <li><a href="#">2번째 메뉴</a></li>
+                <li><a href="#">3번째 메뉴</a></li>
+                <li><a href="#">4번째 메뉴</a></li>
+                <li><a href="#">5번째 메뉴</a></li>
+            </ul>
+        </header>
+        <div class="section_wrap">
+            <section>첫번째 섹션</section>
+            <section>두번째 섹션</section>
+            <section>세번째 섹션</section>
+            <section>네번째 섹션</section>
+            <section>다섯번째 섹션</section>
+        </div>
+    </div>
 </body>
 </html>
