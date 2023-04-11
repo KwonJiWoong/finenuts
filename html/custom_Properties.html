@@ -10,40 +10,53 @@
 <body>
     <style>
         :root {
-            --main-color: #f00;
-            --main-bg: rgb(0, 217, 255);
-            --border-color: rgb(0, 72, 131);
-            --header-height: 70px;
-            --content-gap: 10px;
-            --base-line-height: 1.5;
-            --font-bold : 700;
+            --default-color-01: #f00;
+            --default-bg-01: rgb(0, 217, 255);
+            --border-color-01: rgb(0, 72, 131);
+            --hover-btn-bg-01:#000;
+            --hover-btn-color-01:#fff;
+            --default-height-01: 70px;
+            --default-gap-01: 10px;
+            --default-lineHeight: 1.5;
+            --default-weight-bold: 700;
+            --default-large-gap-01: 100px;
         }
-        
+
         *{margin:0; padding:0; border:0;}
         a{display:block; color:inherit; text-decoration:none;}
         ul, ol{list-style: none;}
         li{display:block;}
-        html,body{line-height:var(--base-line-height);}
+        html,body{line-height:var(--default-line-height);}
 
-        header{height:var(--header-height, 70px); line-height:calc(var(--header-height, 70px) - 20px); border-bottom:solid 2px var(--border-color, --main-bg, --main-color);}
-        header ul{display:flex; justify-content:center; gap:var(--content-gap, 10px);}
-        /* 아래 --border-color 처럼 재사용(해당 부분들 가능) / 중간에 새로 정의 가능  */
+        header{height:var(--default-height-01, 70px); line-height:calc(var(--default-height-01, 70px) - 20px); border-bottom:solid 2px var(--border-color-01, --default-bg-01, --default-color-01);}
+        header ul{display:flex; justify-content:center; gap:var(--default-gap-01, 10px);}
+        /* 아래 --border-color-01 처럼 재사용(해당 부분들 가능) / 중간에 새로 정의 가능  */
         header ul > li{
             --new-color:rgb(0, 189, 72);
-            --border-color: rgb(131, 90, 0);
-            border:solid 2px var(--border-color)
+            --border-color-01: rgb(131, 90, 0);
+            border:solid 2px var(--border-color-01)
+        }
+
+        /* 아래처럼 개별 처리 가능 */
+        header ul > li:nth-child(1) a{
+            --border-color-01:#999;
+            border:solid 2px var(--border-color-01);
+            color:var(--default-color-01, #f00);
         }
 
         header ul > li a{
             margin:5px;
-            border:solid 2px var(--border-color);
-            color:var(--new-color, --main-color);
+            border:solid 2px var(--border-color-01);
+            color:var(--new-color, --default-color-01);
         }
 
-        .section_wrap{display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr;}
+        .section_wrap{display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; margin-top:var(--default-large-gap-01);}
         .section_wrap section{display:flex; align-items:center; justify-content:center; width:150px; height:150px; margin:0 auto;}
-        /* 위 --new-color는 지역변수처럼 적용 (header ul > li 이하 요소들에만) */
-        .section_wrap section:nth-of-type(1){color:var(--new-color, #000); font-weight: var(--font-bold , normal);}
+        /* 위 --new-color / --new-color-02는 지역변수처럼 적용 (header ul > li 이하 요소들에만) */
+        .section_wrap section:nth-of-type(1){color:var(--new-color, #000); font-weight: var(--default-weight-bold , normal);
+            --new-color-02:rgb(140, 104, 182);
+        }
+        .section_wrap section p{display:block; color:var(--new-color-02); font-weight: var(--default-weight-bold , normal);}
     </style>
 
     <div class="wrapper">
@@ -57,11 +70,21 @@
             </ul>
         </header>
         <div class="section_wrap">
-            <section>첫번째 섹션</section>
-            <section>두번째 섹션</section>
-            <section>세번째 섹션</section>
-            <section>네번째 섹션</section>
-            <section>다섯번째 섹션</section>
+            <section>첫번째 섹션
+                <p>첫번째 섹션의 p 입니다.</p>
+            </section>
+            <section>두번째 섹션
+                <p>두번째 섹션의 p 입니다.</p>
+            </section>
+            <section>세번째 섹션
+                <p>세번째 섹션의 p 입니다.</p>
+            </section>
+            <section>네번째 섹션
+                <p>네번째 섹션의 p 입니다.</p>
+            </section>
+            <section>다섯번째 섹션
+                <p>다섯번째 섹션의 p 입니다.</p>
+            </section>
         </div>
     </div>
 </body>
