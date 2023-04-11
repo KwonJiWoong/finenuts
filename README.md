@@ -52,3 +52,5 @@
 ```
 2. 해당 예시 주소
 <https://kwonjiwoong.github.io/finenuts/html/custom_Properties.html>
+
+- 상단 코드는 root쪽에만 작성해 두었지만 header / section / footer 등 각 영역에도 적용 가능
