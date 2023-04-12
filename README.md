@@ -1,6 +1,6 @@
 # finenuts - 권지웅
 
-## custom property 예시
+## custom property
 1. css 소스
 
 ```
@@ -52,5 +52,15 @@
 ```
 2. 해당 예시 주소
 <https://kwonjiwoong.github.io/finenuts/html/custom_Properties.html>
-
+- 다크 모드 등 전체 / 공통 부분 수정할때 수정이 용이함
 - 상단 코드는 root쪽에만 작성해 두었지만 header / section / footer 등 각 영역에도 적용 가능
+
+## container query
+1. 예시 css 코드
+```
+@container (width < 500px){
+    /* 관련 css 코드 */
+}
+```
+2. 해당 예시 주소
+
