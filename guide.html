@@ -6,6 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
 	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/guide.min.css">
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/jquery-3.6.4.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -50,26 +56,65 @@
 				<div class="g-item">
 					<h3 class="g-title">Color</h3>
 					<div class="g-content">
-						<p class="color-point-1">class="color-point-1" (#666)</p>
-						<p class="color-point-2">class="color-point-2" (#999)</p>
-						<p class="color-point-3">class="color-point-3" (#004e5a)</p>
-						<p class="color-point-4">class="color-point-4" (#006f80)</p>
-						<p class="color-point-red">class="color-point-red" (강조/오류,경고 - #e53e30)</p>
+						<style>
+							:root{
+								--font-color-01: #666;
+								--font-color-02: #999;
+								--font-color-03: #004e5a;
+								--font-color-01: #006f80;
+								--font-color-red: #e53e30;
+							}
+
+							.font-color-01{color:var(--font-color-01, #666);}
+							.font-color-02{color:var(--font-color-02, #999);}
+							.font-color-03{color:var(--font-color-03, #004e5a);}
+							.font-color-04{color:var(--font-color-01, #006f80);}
+							.font-color-red{color:var(--font-color-red, #e53e30); font-weight: 700;}
+						</style>
+						<code class="code">:root{
+	--font-color-01: #666;
+	--font-color-02: #999;
+	--font-color-03: #004e5a;
+	--font-color-01: #006f80;
+	--font-color-red: #e53e30;
+}
+
+.font-color-01{color:var(--font-color-01, #666);}
+.font-color-02{color:var(--font-color-02, #999);}
+.font-color-03{color:var(--font-color-03, #004e5a);}
+.font-color-04{color:var(--font-color-01, #006f80);}
+.font-color-red{color:var(--font-color-red, #e53e30); font-weight: 700;}</code>
+						<p class="font-color-01">--font-color-01 (#666)</p>
+						<p class="font-color-02">--font-color-02 (#999)</p>
+						<p class="font-color-03">--font-color-03 (#004e5a)</p>
+						<p class="font-color-04">--font-color-04 (#006f80)</p>
+						<p class="font-color-red">--font-color-red (강조/오류,경고 - #e53e30)</p>
 					</div>
 				</div><!--// g-item-->
 
 				<div class="g-item">
 					<h3 class="g-title">Title</h3>
+					<style>
+						.title-01{font-size:var(--font-size-08, 70px); color:var(--font-color-01, #666);}
+						.title-02{font-size:var(--font-size-07, 60px); color:var(--font-color-02, #666);}
+						.title-03{font-size:var(--font-size-06, 45px); color:var(--font-color-03, #666);}
+						.title-04{font-size:var(--font-size-06, 45px); color:var(--font-color-04, #666); font-weight: 700;}
+						.title-05{font-size:var(--font-size-05, 32px); color:var(--font-color-red, #666); font-weight: 700;}
+						.title-06{font-size:var(--font-size-04, 30px); color:var(--font-color-01, #666); font-weight: 700;}
+						.title-07{font-size:var(--font-size-02, 23px); color:var(--font-color-02, #666); font-weight: 700;}
+						.title-08{font-size:var(--font-size-03, 26px); color:var(--font-color-03, #666); font-weight: 400;}
+						.title-09{font-size:var(--font-size-01, 20px); color:var(--font-color-04, #666); font-weight: 500;}
+					</style>
 					<div class="g-content">
-						<p>class="title-1" ( font : 70px )<br><span class="title-1">폰트</span></p>
-						<p>class="title-9" ( font : 60px )<br><span class="title-9">폰트</span></p>
-						<p>class="title-2" ( font : 45px )<br><span class="title-2">폰트</span></p>
-						<p>class="title-3" ( font : 45px / 700 )<br><span class="title-3">폰트</span></p>
-						<p>class="title-4" ( font : 32px / 700 )<br><span class="title-4">폰트</span></p>
-						<p>class="title-5" ( font : 30px / 700 )<br><span class="title-5">폰트</span></p>
-						<p>class="title-6" ( font : 23px / 700 )<br><span class="title-6">폰트</span></p>
-						<p>class="title-7" ( font : 26px / 400 )<br><span class="title-7">폰트</span></p>
-						<p>class="title-8" ( font : 20px / 500 )<br><span class="title-8">폰트</span></p>
+						<p>class="title-01" ( font : 70px )<br><span class="title-01">폰트</span></p>
+						<p>class="title-02" ( font : 60px )<br><span class="title-02">폰트</span></p>
+						<p>class="title-03" ( font : 45px )<br><span class="title-03">폰트</span></p>
+						<p>class="title-04" ( font : 45px / 700 )<br><span class="title-04">폰트</span></p>
+						<p>class="title-05" ( font : 32px / 700 )<br><span class="title-05">폰트</span></p>
+						<p>class="title-06" ( font : 30px / 700 )<br><span class="title-06">폰트</span></p>
+						<p>class="title-07" ( font : 23px / 700 )<br><span class="title-07">폰트</span></p>
+						<p>class="title-08" ( font : 26px / 400 )<br><span class="title-08">폰트</span></p>
+						<p>class="title-09" ( font : 20px / 500 )<br><span class="title-09">폰트</span></p>
 					</div>
 				</div><!--// g-item-->
 
@@ -573,9 +618,9 @@
 						<br>
 						<h4 class="g-title-sub">List type 2</h4>
 						<ul class="list-type-2">
-							<li>고객님의 포인트를 확인하시고 적립된 포인트로 신나는 여행하세요.</li>
-							<li>고객님의 포인트를 확인하시고 적립된 포인트로 신나는 여행하세요.</li>
-							<li>고객님의 포인트를 확인하시고 적립된 포인트로 신나는 여행하세요.</li>
+							<li>list 내용</li>
+							<li>list 내용</li>
+							<li>list 내용</li>
 						</ul>
 
 						<br><br>
@@ -584,107 +629,16 @@
 							<div class="notice-header"><h3 class="title-8">이용안내</h3></div>
 							<div class="notice-body">
 								<ul class="list-type-2">
-									<li>고객님의 포인트를 확인하시고 적립된 포인트로 신나는 여행하세요.</li>
+									<li>list 내용</li>
 									<li>
-										포인트는 <em class="color-point-red">최소 10P 이상</em>이 되어야 사용하실 수 있습니다. 포인트는  <em class="color-point-red">상품가의 1%</em>이며, 여행을 다녀오신 후  <em class="color-point-red">약 7일 후에 자동적립</em>됩니다.<br>
-										단, 포인트는  <em class="color-point-red">항공권 및 호텔 이용시 적립이 불가</em>하며 사용하실 수 없습니다. (유효기간 : 적립 후 3년까지 사용 가능)
+										list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 
 									</li>
 									<li>
-										포인트 관련 자세한 내용은 <em class="color-point-red">고객센터 > 포인트 안내</em>를 참고해주세요.
-										<span class="link-more"><a href="#" class="btn-link">포인트 안내 바로가기</a></span>
+										list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 list 내용 
 									</li>
 								</ul>
 							</div>
 						</div><!-- //notice-box -->
-
-					</div>
-				</div><!--// g-item-->
-
-				<div class="g-item">
-					<h3 class="g-title">갤러리 리스트</h3>
-					<div class="g-content">
-						<div class="gallery-list">
-							<!-- 방송예정 case -->
-							<div class="list-item schedule">
-								<a href="">
-									<div class="item-img" style="background-image:url('../images/temp/temp_img_01.png')">
-										<span class="onair-ico">방송예정</span>
-										<span class="onair-date">2002-02-20(일) 18:30 방송</span>
-									</div>
-									<div class="item-info">
-										<div class="item-hdr">
-											<p class="tit">울릉도 크루즈 여행</p>
-											<p class="mall"><img src="https://www.krt.co.kr/resources/images/logo/logo_lotteonetv.jpg" alt=""></p>
-										</div>
-										<p class="cont">2002-02-20(일) 18:30 방송</p>
-									</div>
-								</a>
-							</div>
-							<!-- //방송예정 case -->
-							<div class="list-item">
-								<a href="">
-									<div class="item-img" style="background-image:url('../images/temp/temp_img_01.png')"></div>
-									<div class="item-info">
-										<p class="tit">울릉도 크루즈 여행</p>
-										<p class="cont">2002-02-20(일) 18:30 방송</p>
-									</div>
-								</a>
-							</div>
-							<div class="list-item">
-								<a href="">
-									<div class="item-img" style="background-image:url('../images/temp/temp_img_01.png')"></div>
-									<div class="item-info">
-										<p class="tit">울릉도 크루즈 여행</p>
-										<p class="cont">2002-02-20(일) 18:30 방송</p>
-									</div>
-								</a>
-							</div>
-							<div class="list-item">
-								<a href="">
-									<div class="item-img" style="background-image:url('../images/temp/temp_img_01.png')"></div>
-									<div class="item-info">
-										<p class="tit">울릉도 크루즈 여행</p>
-										<p class="cont">2002-02-20(일) 18:30 방송</p>
-									</div>
-								</a>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-
-				<div class="g-item">
-					<h3 class="g-title">Etc</h3>
-					<div class="g-content">
-						<h4 class="g-title-sub">State(label)</h4>
-						<span class="label-state">예약대기</span>
-						<span class="label-state">예약확정</span>
-						<span class="label-state">결제대기</span>
-						<span class="label-state cancel">예약취소</span>
-						<span class="label-state on">공지</span>
-						<span class="label-state default">상시</span>
-						<span class="label-state in shopping">노쇼핑</span>
-						<span class="label-state in tip">노팁</span>
-						<span class="label-state in option">노옵션</span>
-						<span class="label-state in slim">슬림쇼핑</span>
-						<span class="label-state in safety">SAFETY</span>
-						<span class="label-state in special">특별포함</span>
-						<span class="label-state in select">선택관광</span>
-						<span class="label-state in reserve-on">예약가능</span>
-						<span class="label-state in reserve-off">예약마감</span>
-						<span class="label-state in yellow">황색경보</span>
-						<br><br>
-						<h4 class="g-title-sub">State-Text(label)</h4>
-						<span class="state-txt">접수</span>
-						<span class="state-txt ing">답변대기중</span>
-						<span class="state-txt complete">답변완료</span>
-						<br><br>
-						<div class="scope">별점</div>
-						<div class="scope type-1">별점1</div>
-						<div class="scope type-2">별점2</div>
-						<div class="scope type-3">별점3</div>
-						<div class="scope type-4">별점4</div>
-						<div class="scope type-5">별점5</div>
 
 					</div>
 				</div><!--// g-item-->

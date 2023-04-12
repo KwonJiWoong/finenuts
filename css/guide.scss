@@ -1,0 +1,36 @@
+$fontColor : font-color-;
+$fontSize : font-size-;
+
+:root{
+    --#{$fontColor}01: #666;
+    --#{$fontColor}02: #999;
+    --#{$fontColor}03: #004e5a;
+    --#{$fontColor}01: #006f80;
+    --#{$fontColor}red: #e53e30;
+
+    --#{$fontSize}08: 70px;
+    --#{$fontSize}07: 60px;
+    --#{$fontSize}06: 45px;
+    --#{$fontSize}06: 45px;
+    --#{$fontSize}05: 32px;
+    --#{$fontSize}04: 30px;
+    --#{$fontSize}02: 23px;
+    --#{$fontSize}03: 26px;
+    --#{$fontSize}01: 20px;
+}
+
+.#{$fontColor}01{color:var(--#{$fontColor}01, #666);}
+.#{$fontColor}02{color:var(--#{$fontColor}02, #999);}
+.#{$fontColor}03{color:var(--#{$fontColor}03, #004e5a);}
+.#{$fontColor}04{color:var(--#{$fontColor}01, #006f80);}
+.#{$fontColor}red{color:var(--#{$fontColor}red, #e53e30); font-weight: 700;}
+
+.title-01{font-size:var(--#{$fontSize}8, 70px); color:var(#{$fontColor}01, #666);}
+.title-02{font-size:var(--#{$fontSize}7, 60px); color:var(#{$fontColor}02, #666);}
+.title-03{font-size:var(--#{$fontSize}6, 45px); color:var(#{$fontColor}03, #666);}
+.title-04{font-size:var(--#{$fontSize}6, 45px); color:var(#{$fontColor}04, #666); font-weight: 700;}
+.title-05{font-size:var(--#{$fontSize}5, 32px); color:var(#{$fontColor}red, #666); font-weight: 700;} 
+.title-06{font-size:var(--#{$fontSize}4, 30px); color:var(#{$fontColor}01, #666); font-weight: 700;}
+.title-07{font-size:var(--#{$fontSize}2, 23px); color:var(#{$fontColor}02, #666); font-weight: 700;}
+.title-08{font-size:var(--#{$fontSize}3, 26px); color:var(#{$fontColor}03, #666); font-weight: 400;}
+.title-09{font-size:var(--#{$fontSize}1, 20px); color:var(#{$fontColor}04, #666); font-weight: 500;}
