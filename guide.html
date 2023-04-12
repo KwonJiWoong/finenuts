@@ -11,13 +11,13 @@
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/jquery-3.6.4.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/guide.js"></script>
 </head>
 <body>
 <div class="wrap">
 	<div class="wrap__inner">
 		<header>
-			<h1>Design Guide</h1>
+			<h1>Guide</h1>
 		</header>
 		<main class="g-container">
 			<div class="guide-wrap">
@@ -26,10 +26,10 @@
 					<h3 class="g-title">Logo</h3>
 					<div class="g-content">
 						<span style="display:inline-block; padding:5px 10px; border:1px solid #ccc">
-							<img src="../images/logo.png" alt="로고">
+							<img src="img/logo.svg" alt="로고">
 						</span>
 						<span style="background:#000; display:inline-block; padding:5px 10px;">
-							<img src="../images/logo-w.png" alt="로고">
+							<img src="img/logo-w.svg" alt="로고">
 						</span>
 					</div>
 				</div><!--// g-item-->
@@ -71,7 +71,21 @@
 							.font-color-04{color:var(--font-color-01, #006f80);}
 							.font-color-red{color:var(--font-color-red, #e53e30); font-weight: 700;}
 						</style>
-						<code class="code">:root{
+						<pre class="code"><button type="button" class="btn_copy">복사 버튼</button>
+<code><span class="element">:root</span>{
+	<span class="key">--font-color-01</span>: #666;
+	<span class="key">--font-color-02</span>: #999;
+	<span class="key">--font-color-03</span>: #004e5a;
+	<span class="key">--font-color-01</span>: #006f80;
+	<span class="key">--font-color-red</span>: #e53e30;
+}
+
+<span class="element">.font-color-01</span>{<span class="key">color</span>:var(--font-color-01, #666);}
+<span class="element">.font-color-02</span>{<span class="key">color</span>:var(--font-color-02, #999);}
+<span class="element">.font-color-03</span>{<span class="key">color</span>:var(--font-color-03, #004e5a);}
+<span class="element">.font-color-04</span>{<span class="key">color</span>:var(--font-color-01, #006f80);}
+<span class="element">.font-color-red</span>{<span class="key">color</span>:var(--font-color-red, #e53e30); <span class="key">font-weight</span>: 700;}</code>
+<textarea class="hidden">:root{
 	--font-color-01: #666;
 	--font-color-02: #999;
 	--font-color-03: #004e5a;
@@ -83,7 +97,8 @@
 .font-color-02{color:var(--font-color-02, #999);}
 .font-color-03{color:var(--font-color-03, #004e5a);}
 .font-color-04{color:var(--font-color-01, #006f80);}
-.font-color-red{color:var(--font-color-red, #e53e30); font-weight: 700;}</code>
+.font-color-red{color:var(--font-color-red, #e53e30); font-weight: 700;}</textarea>
+</pre>
 						<p class="font-color-01">--font-color-01 (#666)</p>
 						<p class="font-color-02">--font-color-02 (#999)</p>
 						<p class="font-color-03">--font-color-03 (#004e5a)</p>
@@ -94,6 +109,25 @@
 
 				<div class="g-item">
 					<h3 class="g-title">Title</h3>
+					<pre class="code"><button type="button" class="btn_copy">복사 버튼</button><code>
+<span class="element">.title-01</span>{<span class="key">font-size</span>:var(--font-size-08, 70px); <span class="key">color</span>:var(--font-color-01, #666);}
+<span class="element">.title-02</span>{<span class="key">font-size</span>:var(--font-size-07, 60px); <span class="key">color</span>:var(--font-color-02, #666);}
+<span class="element">.title-03</span>{<span class="key">font-size</span>:var(--font-size-06, 45px); <span class="key">color</span>:var(--font-color-03, #666);}
+<span class="element">.title-04</span>{<span class="key">font-size</span>:var(--font-size-06, 45px); <span class="key">color</span>:var(--font-color-04, #666); <span class="key">font-weight</span>: 700;}
+<span class="element">.title-05</span>{<span class="key">font-size</span>:var(--font-size-05, 32px); <span class="key">color</span>:var(--font-color-red, #666); <span class="key">font-weight</span>: 700;}
+<span class="element">.title-06</span>{<span class="key">font-size</span>:var(--font-size-04, 30px); <span class="key">color</span>:var(--font-color-01, #666); <span class="key">font-weight</span>: 700;}
+<span class="element">.title-07</span>{<span class="key">font-size</span>:var(--font-size-02, 23px); <span class="key">color</span>:var(--font-color-02, #666); <span class="key">font-weight</span>: 700;}
+<span class="element">.title-08</span>{<span class="key">font-size</span>:var(--font-size-03, 26px); <span class="key">color</span>:var(--font-color-03, #666); <span class="key">font-weight</span>: 400;}
+<span class="element">.title-09</span>{<span class="key">font-size</span>:var(--font-size-01, 20px); <span class="key">color</span>:var(--font-color-04, #666); <span class="key">font-weight</span>: 500;}</code><textarea class="hidden">
+	.title-01{font-size:var(--font-size-08, 70px); color:var(--font-color-01, #666);}
+	.title-02{font-size:var(--font-size-07, 60px); color:var(--font-color-02, #666);}
+	.title-03{font-size:var(--font-size-06, 45px); color:var(--font-color-03, #666);}
+	.title-04{font-size:var(--font-size-06, 45px); color:var(--font-color-04, #666); font-weight: 700;}
+	.title-05{font-size:var(--font-size-05, 32px); color:var(--font-color-red, #666); font-weight: 700;}
+	.title-06{font-size:var(--font-size-04, 30px); color:var(--font-color-01, #666); font-weight: 700;}
+	.title-07{font-size:var(--font-size-02, 23px); color:var(--font-color-02, #666); font-weight: 700;}
+	.title-08{font-size:var(--font-size-03, 26px); color:var(--font-color-03, #666); font-weight: 400;}
+	.title-09{font-size:var(--font-size-01, 20px); color:var(--font-color-04, #666); font-weight: 500;}</textarea></pre>
 					<style>
 						.title-01{font-size:var(--font-size-08, 70px); color:var(--font-color-01, #666);}
 						.title-02{font-size:var(--font-size-07, 60px); color:var(--font-color-02, #666);}
@@ -819,17 +853,6 @@
 							</dl><!-- //form-grid-item -->
 						</div>
 					</div>
-					<script src="../js/datepicker.min.js"></script>
-					<script src="../js/datepicker.ko.js"></script>
-					<script>
-						$('#pickerEx2-1').datepicker({
-							position:"bottom left"
-						});
-						$('#pickerEx2-2').datepicker({
-							position:"bottom right"
-						});
-						
-					</script>
 				</div>
 
 				<div class="g-item">

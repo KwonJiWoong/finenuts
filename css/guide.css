@@ -1,3 +1,44 @@
+@charset "UTF-8";
+/* code 부분 */
+pre.code {
+  display: block;
+  position: relative;
+  z-index: 0;
+  margin: 1rem 0 2rem;
+  padding: 1rem 2.5rem 1rem 1rem;
+  background-color: #f2f1f1;
+}
+pre.code code {
+  padding: 0;
+  background: none;
+  color: #1b1b1b;
+}
+pre.code code .element {
+  color: #872bff;
+}
+pre.code code .key {
+  color: #d30038;
+}
+pre.code .hidden {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  left: -1px;
+  top: -1px;
+  z-index: -999;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+pre.code .btn_copy {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* //code 부분 */
 :root {
   --font-color-01: #666;
   --font-color-02: #999;

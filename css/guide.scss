@@ -1,6 +1,33 @@
 $fontColor : font-color-;
 $fontSize : font-size-;
 
+/* code 부분 */
+pre.code {
+    display:block;
+    position:relative;
+    z-index:0;
+    margin: 1rem 0 2rem;
+    padding: 1rem 2.5rem 1rem 1rem;
+    background-color: #f2f1f1;
+
+    code {
+        padding: 0;
+        background: none;
+        color: #1b1b1b;
+        .element{
+            color:#872bff
+        }
+        .key{
+            color:#d30038;
+        }
+    }
+    .hidden{
+        display:block; overflow:hidden; position:relative; left: -1px; top: -1px; z-index:-999; width:1px; height:1px; margin:0; padding:0; border:none;
+    }
+    .btn_copy{position:absolute; right:0; top:0;}
+}
+/* //code 부분 */
+
 :root{
     --#{$fontColor}01: #666;
     --#{$fontColor}02: #999;
