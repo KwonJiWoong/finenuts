@@ -8,6 +8,10 @@
 	<link rel="shortcut icon" href="">
 	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/guide.min.css">
+	<!-- 확인용 파일 -->
+	<link rel="stylesheet" href="css/guide.css">
+	<!-- //확인용 파일 -->
+	<link rel="stylesheet" href="css/reset.css">
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/jquery-3.6.4.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
@@ -71,7 +75,7 @@
 							.font-color-04{color:var(--font-color-01, #006f80);}
 							.font-color-red{color:var(--font-color-red, #e53e30); font-weight: 700;}
 						</style>
-						<pre class="code"><button type="button" class="btn_copy">복사 버튼</button>
+						<pre class="code"><button type="button" class="btn_copy">클립보드 복사</button>
 <code><span class="element">:root</span>{
 	<span class="key">--font-color-01</span>: #666;
 	<span class="key">--font-color-02</span>: #999;
@@ -109,7 +113,7 @@
 
 				<div class="g-item">
 					<h3 class="g-title">Title</h3>
-					<pre class="code"><button type="button" class="btn_copy">복사 버튼</button><code>
+					<pre class="code"><button type="button" class="btn_copy">클립보드 복사</button><code>
 <span class="element">.title-01</span>{<span class="key">font-size</span>:var(--font-size-08, 70px); <span class="key">color</span>:var(--font-color-01, #666);}
 <span class="element">.title-02</span>{<span class="key">font-size</span>:var(--font-size-07, 60px); <span class="key">color</span>:var(--font-color-02, #666);}
 <span class="element">.title-03</span>{<span class="key">font-size</span>:var(--font-size-06, 45px); <span class="key">color</span>:var(--font-color-03, #666);}
@@ -165,59 +169,7 @@
 								<button class="btn-type-1 color--red"><span>class="btn-type-1 color--red"(default)</span></button>
 								<br>
 								<button class="btn-type-2"><span>class="btn-type-2"</span></button>
-								<br>
-								<button class="btn-type-2">
-									<span><img src="../images/icon_lock.svg" alt=""></span>
-									<span>본인인증</span>
-								</button>
-								<br>
-								<button class="btn-type-3"><span>class="btn-type-3"</span></button>
-								<br>
-								<button class="btn-type-3 success">
-									<span>휴대폰 본인인증 완료</span>
-								</button>
-								<br>
-								<button class="btn-type-round"><span>class="btn-type-round"</span></button>
-								<button class="btn-type-round"><span>다른 취향 보기</span><span><img src="../images/icon_reset.svg" alt=""></span></button>
-								<button class="btn-type-round more"><span>더보기</span></button>
-								<br><br>
-								<button class="btn-type-inner"><span>class="btn-type-inner"</span></button>
-								<br>
-								<button class="btn-type-inner arrow"><span>class="btn-type-inner + arrow"</span></button>
-								<br>
-								<button class="btn-type-inner down"><span>class="btn-type-inner + down"</span></button>
-								<br>
-								<button class="btn-type-inner search"><span>class="btn-type-inner + search"</span></button>
-								<br>
-								<button class="btn-type-inner write"><span>class="btn-type-inner + write"</span></button>
-								<br><br>
-								<button class="btn-type-inner color--black"><span>class="btn-type-inner color--black"</span></button>
-								<div class="btn-wrap">
-									<button class="btn-type-1"><span>버튼</span></button>
-									<button class="btn-type-1 color--black"><span>버튼</span></button>
-								</div>
-								<br><br>
-								<button class="btn-type-down"><span>선물쿠폰<em class="m-blind">받기</em></span></button>
-								<br><br>
-								<button class="btn-type-s del"><span>전체 삭제</span></button>
-								<br><br>
-								<button class="btn-type-s arrow"><span>항공편변경</span></button>
-								<br><br>
-								<button class="btn-type-s sel"><span>선택</span></button>
-								<br><br>
-								<button class="btn-type-s print"><span>프린트</span></button>
-								<br><br>
-								<button class="btn-round-arrow prev"><span>이전</span></button>
-								<button class="btn-round-arrow next"><span>다음</span></button>
-								<br><br>
-								<button class="btn-cont-more"><span>더보기</span></button>
-								<br>
-								<button class="btn-cont-more green"><span>더보기</span></button>
-								<br>
-								<button class="btn-cont-close"><span>삭제</span></button>
-								<br>
-								<button class="btn-view-prev"><span>이전</span></button>
-								<button class="btn-view-next"><span>다음</span></button>
+								
 							</div>
 							<div class="g-grid__col">
 								<h4 class="g-title-sub">Tag : a</h4>
@@ -228,59 +180,66 @@
 								<a href="#" class="btn-type-1 color--red"><span>class="btn-type-1 color--red"(default)</span></a>
 								<br>
 								<a href="#" class="btn-type-2"><span>class="btn-type-2"</span></a>
-								<br>
-								<a href="#" class="btn-type-2">
-									<span><img src="../images/icon_naver.svg" alt=""></span>
-									<span>네이버로 가입하기</span>
-								</a>
-								<br>
-								<a href="#" class="btn-type-3"><span>class="btn-type-3"</span></a>
-								<br>
-								<a href="#"  class="btn-type-3 success"><span>본인인증 완료</span></a>
-								<br>
-								<a href="#" class="btn-type-round"><span>class="btn-type-round"</span></a>
-								<a href="#" class="btn-type-round"><span>다른 취향 보기</span><span><img src="../images/icon_reset.svg" alt=""></span></a>
-								<a href="#" class="btn-type-round more"><span>더보기</span></a>
-								<br><br>
-								<a href="#" class="btn-type-inner"><span>class="btn-type-inner"</span></a>
-								<br>
-								<a href="#" class="btn-type-inner arrow"><span>class="btn-type-inner + arrow"</span></a>
-								<br>
-								<a href="#" class="btn-type-inner down"><span>class="btn-type-inner + down"</span></a>
-								<br>
-								<a href="#" class="btn-type-inner search"><span>class="btn-type-inner + search"</span></a>
-								<br>
-								<a href="#" class="btn-type-inner write"><span>class="btn-type-inner + write"</span></a>
-								<br><br>
-								<a href="#" class="btn-type-inner color--black"><span>class="btn-type-inner color--black"</span></a>
-								<div class="btn-wrap">
-									<a href="#" class="btn-type-1"><span>버튼</span></a>
-									<a href="#" class="btn-type-1 color--black"><span>버튼</span></a>
-								</div>
-								<br><br>
-								<a href="#" class="btn-type-down"><span>선물쿠폰<em class="m-blind">받기</em></span></a>
-								<br><br>
-								<a href="#" class="btn-type-s del"><span>전체 삭제</span></a>
-								<br><br>
-								<a href="#" class="btn-type-s arrow"><span>항공편변경</span></a>
-								<br><br>
-								<a href="#" class="btn-type-s sel"><span>선택</span></a>
-								<br><br>
-								<button class="btn-type-s print"><span>프린트</span></button>
-								<br><br>
-
-								<a href="#" class="btn-round-arrow prev">이전</a>
-								<a href="#" class="btn-round-arrow next">다음</a>
-								<br><br>
-								<a href="#" class="btn-cont-more"><span>더보기</span></a>
-								<br>
-								<a href="#" class="btn-cont-close">삭제</a>
 							</div>
 						</div>
 					</div>
 				</div><!--// g-item-->
-
 				<div class="g-item">
+					<h3 class="g-title">Tab</h3>
+					<div class="g-content">
+						<h4 class="g-title-sub">Tag : button</h4>
+						<nav class="tab-default tab-motion">
+							<button class="selected">타이틀01</button>
+							<button>타이틀02</button>
+							<button>타이틀03</button>
+							<span class="bar"></span>
+						</nav><!-- //tab-default -->
+						<br><br>
+						<nav class="tab-default tab-motion">
+							<button class="selected">타이틀01</button>
+							<button>타이틀02</button>
+							<button>타이틀03</button>
+						</nav><!-- //tab-default sub -->
+						<br><br>
+						<nav class="tab-nav">
+							<button class="selected">회원</button>
+							<button>비회원</button>
+						</nav><!-- //tab-nav -->
+						<br><br>
+
+						<h4 class="g-title-sub">Tag : a</h4>
+						<br>
+						<nav class="tab-default">
+							<a href="#" class="selected">타이틀01</a>
+							<a href="#">타이틀02</a>
+							<a href="#">타이틀03</a>
+						</nav><!-- // tab-default -->
+						<br><br>
+						<nav class="tab-default sub">
+							<button class="selected">타이틀01</button>
+							<button>타이틀02</button>
+							<button>타이틀03</button>
+						</nav><!-- //tab-default sub -->
+						<br><br>
+						<nav class="tab-nav">
+							<a href="#" >회원</a>
+							<a href="#" class="selected">비회원</a>
+						</nav><!-- // tab-nav -->
+						<br><br>
+						<h4 class="g-title-sub">Tab : Tab-nav2</h4>
+						<nav class="tab-nav2">
+							<a href="#" >회원</a>
+							<a href="#" class="selected">비회원</a>
+						</nav><!-- // tab-nav -->
+						<br><br>
+						<nav class="tab-nav2">
+							<a href="#" class="selected">회원</a>
+							<a href="#">비회원</a>
+						</nav><!-- // tab-nav -->
+					</div>
+				</div><!--// g-item-->
+
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Form - input, textarea</h3>
 					<div class="g-content">
 						<div class="g-grid">
@@ -336,7 +295,7 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Form - checkbox, radio</h3>
 					<div class="g-content">
 						<div class="g-grid">
@@ -426,7 +385,7 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Form - select</h3>
 					<div class="g-content">
 						<h4 class="g-title-sub">Default</h4>
@@ -467,61 +426,8 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
-					<h3 class="g-title">Tab</h3>
-					<div class="g-content">
-						<h4 class="g-title-sub">Tag : button</h4>
-						<nav class="tab-default">
-							<button class="selected">타이틀01</button>
-							<button>타이틀02</button>
-							<button>타이틀03</button>
-						</nav><!-- //tab-default -->
-						<br><br>
-						<nav class="tab-default sub">
-							<button class="selected">타이틀01</button>
-							<button>타이틀02</button>
-							<button>타이틀03</button>
-						</nav><!-- //tab-default sub -->
-						<br><br>
-						<nav class="tab-nav">
-							<button class="selected">회원</button>
-							<button>비회원</button>
-						</nav><!-- //tab-nav -->
-						<br><br>
 
-						<h4 class="g-title-sub">Tag : a</h4>
-						<br>
-						<nav class="tab-default">
-							<a href="#" class="selected">타이틀01</a>
-							<a href="#">타이틀02</a>
-							<a href="#">타이틀03</a>
-						</nav><!-- // tab-default -->
-						<br><br>
-						<nav class="tab-default sub">
-							<button class="selected">타이틀01</button>
-							<button>타이틀02</button>
-							<button>타이틀03</button>
-						</nav><!-- //tab-default sub -->
-						<br><br>
-						<nav class="tab-nav">
-							<a href="#" >회원</a>
-							<a href="#" class="selected">비회원</a>
-						</nav><!-- // tab-nav -->
-						<br><br>
-						<h4 class="g-title-sub">Tab : Tab-nav2</h4>
-						<nav class="tab-nav2">
-							<a href="#" >회원</a>
-							<a href="#" class="selected">비회원</a>
-						</nav><!-- // tab-nav -->
-						<br><br>
-						<nav class="tab-nav2">
-							<a href="#" class="selected">회원</a>
-							<a href="#">비회원</a>
-						</nav><!-- // tab-nav -->
-					</div>
-				</div><!--// g-item-->
-
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Table</h3>
 					<div class="g-content">
 						<h4 class="g-title-sub">Table - Table type 1</h4>
@@ -587,7 +493,7 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Paging</h3>
 					<div class="g-content">
 						<div style="height:50px; background:#f0f0f0; display:flex; align-items: center; justify-content: center">contents</div>
@@ -611,7 +517,7 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">List</h3>
 					<div class="g-content">
 						<h4 class="g-title-sub">List - Text Inline</h4>
@@ -677,7 +583,7 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Grid Layout</h3>
 					<div class="g-content">
 						<h4 class="g-title-sub">Grid - class="panel-box"</h4>
@@ -706,7 +612,7 @@
 					</div>
 				</div>
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Form Grid</h3>
 					<div class="g-content">
 						<div class="form-grid" style="max-width:600px">
@@ -787,7 +693,7 @@
 							</dl>
 
 							<dl class="form-grid-item col3">
-								<dt class="label required">여행인원</dt>
+								<dt class="label required">인원</dt>
 								<dd class="cont">
 									<div class="label">성인</div>
 									<div class="inp-sel">
@@ -832,20 +738,20 @@
 					</div>
 				</div><!--// g-item-->
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Datepicker</h3>
 					<div class="g-content">
 						<div class="form-grid" style="max-width:600px">
 							<dl class="form-grid-item col2">
-								<dt class="label required">여행기간</dt>
+								<dt class="label required">기간</dt>
 								<dd class="cont">
-									<div class="label">출발일</div>
+									<div class="label">시작일</div>
 									<div id="" class="ui-datepicker">
 										<input type="tel" id="pickerEx2-1" name="start" class="inp-base ui-datepicker-inp" value="" placeholder="" title="시작일" data-min="2010-01-01" data-max="2030-12-31">
 									</div>
 								</dd>
 								<dd class="cont">
-									<div class="label">도착일</div>
+									<div class="label">종료일</div>
 									<div class="ui-datepicker">
 										<input type="tel" id="pickerEx2-2" name="end" class="inp-base ui-datepicker-inp" value="" placeholder="" title="종료일" data-min="2010-01-01" data-max="2030-12-31">
 									</div>
@@ -855,7 +761,7 @@
 					</div>
 				</div>
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Popup</h3>
 					<div class="g-content">
 
@@ -1006,7 +912,7 @@
 				</div><!--// g-item-->
 
 
-				<div class="g-item">
+				<div class="g-item" style="display:none;">
 					<h3 class="g-title">Loading</h3>
 					<div class="g-content">
 						<button type="button" class="btn-type-1" onclick="onChangeLoding()">로딩시작</button>

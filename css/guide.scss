@@ -1,5 +1,7 @@
 $fontColor : font-color-;
 $fontSize : font-size-;
+$backgroundColor : background-color-;
+$borderColor : border-color-;
 
 /* code 부분 */
 pre.code {
@@ -32,7 +34,8 @@ pre.code {
     --#{$fontColor}01: #666;
     --#{$fontColor}02: #999;
     --#{$fontColor}03: #004e5a;
-    --#{$fontColor}01: #006f80;
+    --#{$fontColor}04: #006f80;
+    --#{$fontColor}05: #222;
     --#{$fontColor}red: #e53e30;
 
     --#{$fontSize}08: 70px;
@@ -44,6 +47,13 @@ pre.code {
     --#{$fontSize}02: 23px;
     --#{$fontSize}03: 26px;
     --#{$fontSize}01: 20px;
+    --#{$fontSize}00: 14px;
+
+    --#{$borderColor}01: #ebebeb;
+    --#{$borderColor}02: #222;
+
+    --#{$backgroundColor}01: #fff;
+    --#{$backgroundColor}02: #222;
 }
 
 .#{$fontColor}01{color:var(--#{$fontColor}01, #666);}
@@ -61,3 +71,36 @@ pre.code {
 .title-07{font-size:var(--#{$fontSize}2, 23px); color:var(#{$fontColor}02, #666); font-weight: 700;}
 .title-08{font-size:var(--#{$fontSize}3, 26px); color:var(#{$fontColor}03, #666); font-weight: 400;}
 .title-09{font-size:var(--#{$fontSize}1, 20px); color:var(#{$fontColor}04, #666); font-weight: 500;}
+
+
+/* tab */
+.tab-default{
+    display: flex;
+    position:relative;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--#{$borderColor}01);
+    background-color: var(--#{$backgroundColor});
+    & > button,
+    & > a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // flex: 1;
+        padding: 12px;
+        font-size: var(--#{$fontSize}00, 14px);
+        color: var(--#{$fontColor}02, #999);
+        font-weight: 700;
+        &.selected{
+            position: relative;
+            color: var(--#{$fontColor}05);
+        }
+    }
+    & > .bar{
+        position:absolute; 
+        left:0; 
+        bottom:0;
+        height:1px;
+        background-color:var(--#{$backgroundColor}02);
+    }
+}
+/* //tab */

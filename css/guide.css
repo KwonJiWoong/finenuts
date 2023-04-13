@@ -43,7 +43,8 @@ pre.code .btn_copy {
   --font-color-01: #666;
   --font-color-02: #999;
   --font-color-03: #004e5a;
-  --font-color-01: #006f80;
+  --font-color-04: #006f80;
+  --font-color-05: #222;
   --font-color-red: #e53e30;
   --font-size-08: 70px;
   --font-size-07: 60px;
@@ -54,6 +55,11 @@ pre.code .btn_copy {
   --font-size-02: 23px;
   --font-size-03: 26px;
   --font-size-01: 20px;
+  --font-size-00: 14px;
+  --border-color-01: #ebebeb;
+  --border-color-02: #222;
+  --background-color-01: #fff;
+  --background-color-02: #222;
 }
 
 .font-color-01 {
@@ -127,3 +133,34 @@ pre.code .btn_copy {
   color: var(font-color-04, #666);
   font-weight: 500;
 }
+
+/* tab */
+.tab-default {
+  display: flex;
+  position: relative;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border-color-01);
+  background-color: var(--background-color-);
+}
+.tab-default > button, .tab-default > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  font-size: var(--font-size-00, 14px);
+  color: var(--font-color-02, #999);
+  font-weight: 700;
+}
+.tab-default > button.selected, .tab-default > a.selected {
+  position: relative;
+  color: var(--font-color-05);
+}
+.tab-default > .bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--background-color-02);
+}
+
+/* //tab */
