@@ -36,6 +36,10 @@ pre.code .btn_copy {
   position: absolute;
   right: 0;
   top: 0;
+  padding: 10px;
+  border: solid 1px #000;
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* //code 부분 */
@@ -90,17 +94,17 @@ pre.code .btn_copy {
 
 .title-02 {
   font-size: var(--font-size-7, 60px);
-  color: var(font-color-02, #666);
+  color: var(font-color-02, #999);
 }
 
 .title-03 {
   font-size: var(--font-size-6, 45px);
-  color: var(font-color-03, #666);
+  color: var(font-color-03, #004e5a);
 }
 
 .title-04 {
   font-size: var(--font-size-6, 45px);
-  color: var(font-color-04, #666);
+  color: var(font-color-04, #006f80);
   font-weight: 700;
 }
 
@@ -118,19 +122,19 @@ pre.code .btn_copy {
 
 .title-07 {
   font-size: var(--font-size-2, 23px);
-  color: var(font-color-02, #666);
+  color: var(font-color-02, #999);
   font-weight: 700;
 }
 
 .title-08 {
   font-size: var(--font-size-3, 26px);
-  color: var(font-color-03, #666);
+  color: var(font-color-03, #004e5a);
   font-weight: 400;
 }
 
 .title-09 {
   font-size: var(--font-size-1, 20px);
-  color: var(font-color-04, #666);
+  color: var(font-color-04, #006f80);
   font-weight: 500;
 }
 
@@ -161,6 +165,38 @@ pre.code .btn_copy {
   bottom: 0;
   height: 1px;
   background-color: var(--background-color-02);
+}
+
+.tab-fill {
+  display: flex;
+  position: relative;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border-color-01);
+  background-color: var(--background-color-);
+}
+.tab-fill > button, .tab-fill > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #999;
+  transition: color 0.5s;
+}
+.tab-fill > button.selected, .tab-fill > a.selected {
+  position: relative;
+  color: #fff;
+}
+.tab-fill > .bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  height: 100%;
+  background-color: #000;
 }
 
 /* //tab */

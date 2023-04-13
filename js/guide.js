@@ -14,10 +14,10 @@ $(function(){
 
     // 탭 초기화
     function tab_init(){
-        if($('.tab-default').length > 0){
-            $('.tab-default').each(function(){
+        if($('.tab-default, .tab-fill').length > 0){
+            $('.tab-default, .tab-fill').each(function(){
                 let $this = $(this).children('.selected');
-                let $width = $this.outerWidth();
+                let $width = $this.outerWidth(true);
                 let $left = $this.position().left;
                 if(!$(this).children('.bar').length > 0){
                     $(this).append('<span class="bar"></span>');
@@ -30,10 +30,13 @@ $(function(){
             });
         }
     }
+    function test(){
+        console.log('test Function 입니다.');
+    }
     // 탭 클릭 모션
-    $('.tab-default > button, .tab-default > a').on('click', function(e){
+    $('.tab-default > button, .tab-default > a, .tab-fill > button, .tab-fill > a').on('click', function(e){
         let $this = $(this);
-        let $width = $this.outerWidth();
+        let $width = $this.outerWidth(true);
         let $left = $this.position().left;
         e.preventDefault();
         $this.addClass('selected').siblings('.selected').removeClass('selected');
