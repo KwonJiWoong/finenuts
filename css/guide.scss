@@ -122,13 +122,16 @@ pre.code {
         font-size: 14px;
         font-weight: 700;
         color: #999;
-        transition:color .5s;
         &.selected{
             position: relative;
             color: #fff;
         }
     }
-    & > .bar{
+    &.tab-motion > button,
+    &.tab-motion > a{
+        transition:color .5s;
+    }
+    &.tab-motion > .bar{
         position:absolute; 
         left:0; 
         bottom:0;

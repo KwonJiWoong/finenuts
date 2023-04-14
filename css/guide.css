@@ -184,13 +184,15 @@ pre.code .btn_copy {
   font-size: 14px;
   font-weight: 700;
   color: #999;
-  transition: color 0.5s;
 }
 .tab-fill > button.selected, .tab-fill > a.selected {
   position: relative;
   color: #fff;
 }
-.tab-fill > .bar {
+.tab-fill.tab-motion > button, .tab-fill.tab-motion > a {
+  transition: color 0.5s;
+}
+.tab-fill.tab-motion > .bar {
   position: absolute;
   left: 0;
   bottom: 0;
