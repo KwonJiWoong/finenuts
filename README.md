@@ -1,5 +1,5 @@
 # scss 설치 방법(대표적인 두가지 방법)
-1. vscode 등 에디터에서 extension을 활용하여 sass(scss) Compiler를 사용한다.(vscode에서는 Live Sass Compiler)
+1. vscode 등 에디터에서 extension을 활용하여 sass(scss) Compiler를 사용.(vscode에서는 Live Sass Compiler)
 2. node.js를 활용하여 터미널에 "npm install -g sass"를 입력하여 설치한다.
 
 ## 세팅 방법
