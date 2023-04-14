@@ -5,7 +5,7 @@
 2. node.js를 활용하여 터미널에 "npm install -g sass"를 입력하여 설치한다.
 
 ##세팅 방법
-1. 에디터 세팅 시 해당 settings.json 에서 포멧을 결정한다.(아래는 제 세팅 예시입니다.)
+1. 에디터 extension으로 설치 시 해당 settings.json 에서 포멧을 결정한다.(아래는 제 세팅 예시입니다.)
 ```
 {
     "liveSassCompile.settings.formats":[
