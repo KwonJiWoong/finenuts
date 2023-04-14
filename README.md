@@ -1,4 +1,4 @@
-# scss 사용 방법(대표적인 두가지 방법)
+# scss 설치 방법(대표적인 두가지 방법)
 1. vscode 등 에디터에서 extension을 활용하여 sass(scss) Compiler를 사용한다.(vscode에서는 Live Sass Compiler)
 2. node.js를 활용하여 터미널에 "npm install -g sass"를 입력하여 설치한다.
 
@@ -55,8 +55,6 @@ $ sass --watch --style compact input.css
 
 // 자동으로 Map파일 제외하고 compact 형식으로 컴파일
 $ sass --watch --sourcemap
-
-
 ```
 
 ## custom property / scss 활용한 가이드
