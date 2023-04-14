@@ -1,60 +1,56 @@
-/* 변수 선언 가능 */
+@import './utils.scss'; /* 변수파일 */
+$font08: --font-size-08;
+$font07: --font-size-07;
+$font06: --font-size-06;
+$font05: --font-size-05;
+$font04: --font-size-04;
+$font03: --font-size-03;
+$font02: --font-size-02;
+$font01: --font-size-01;
+$font00: --font-size-00;
 
-// font 컬러
-$font-color-01: #666;
-$font-color-02: #999;
-$font-color-03: #004e5a;
-$font-color-04: #006f80;
-$font-color-05: #222;
-$font-color-red: #e53e30;
+:root{    
+    /*브라우저 사이즈767px이하일때*/
+    @include mobile{ 
+        /* font 사이즈 */
+        #{$font08}: 35px;
+        #{$font07}: 30px;
+        #{$font06}: 22px;
+        #{$font05}: 16px;
+        #{$font04}: 16px;
+        #{$font03}: 14px;
+        #{$font02}: 12px;
+        #{$font01}: 12px;
+        #{$font00}: 12px;
 
-
-// font 사이즈
-$font-size-08: 70px;
-$font-size-07: 60px;
-$font-size-06: 45px;
-$font-size-06: 45px;
-$font-size-05: 32px;
-$font-size-04: 30px;
-$font-size-02: 23px;
-$font-size-03: 26px;
-$font-size-01: 20px;
-$font-size-00: 14px;
-
-// border 컬러
-$border-color-01: #ebebeb;
-$border-color-02: #222;
-
-// background 컬러
-$background-color-01: #fff;
-$background-color-02: #222;
-
-/* code 부분 */
-pre.code {
-    display:block;
-    position:relative;
-    z-index:0;
-    margin: 1rem 0 2rem;
-    padding: 1rem 2.5rem 1rem 1rem;
-    background-color: #f2f1f1;
-
-    code {
-        padding: 0;
-        background: none;
-        color: #1b1b1b;
-        .element{
-            color:#872bff
-        }
-        .key{
-            color:#d30038;
-        }
     }
-    .hidden{
-        display:block; overflow:hidden; position:relative; left: -1px; top: -1px; z-index:-999; width:1px; height:1px; margin:0; padding:0; border:none;
+    /*브라우저 사이즈1023px이하일때*/
+    @include tablet{
+        /* font 사이즈 */
+        #{$font08}: 40px;
+        #{$font07}: 30px;
+        #{$font06}: 25px;
+        #{$font05}: 20px;
+        #{$font04}: 18px;
+        #{$font03}: 16px;
+        #{$font02}: 16px;
+        #{$font01}: 16px;
+        #{$font00}: 14px;
     }
-    .btn_copy{position:absolute; right:0; top:0; padding:10px; border:solid 1px #000; border-radius:5px; box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.1);}
-}
-/* //code 부분 */
+    /*브라우저 사이즈1024px이상일때*/
+    @include desktop{
+        /* font 사이즈 */
+        #{$font08}: 70px;
+        #{$font07}: 60px;
+        #{$font06}: 45px;
+        #{$font05}: 32px;
+        #{$font04}: 30px;
+        #{$font03}: 26px;
+        #{$font02}: 23px;
+        #{$font01}: 20px;
+        #{$font00}: 14px;
+    }
+  }
 
 
 .font-color-01{color:$font-color-01;}
@@ -63,15 +59,48 @@ pre.code {
 .font-color-04{color:$font-color-01;}
 .font-color-red{color:$font-color-red; font-weight: 700;}
 
-.title-01{font-size:$font-size-08; color:$font-color-01;}
-.title-02{font-size:$font-size-07; color:$font-color-02;}
-.title-03{font-size:$font-size-06; color:$font-color-03;}
-.title-04{font-size:$font-size-06; color:$font-color-04; font-weight: 700;}
-.title-05{font-size:$font-size-05; color:$font-color-red; font-weight: 700;} 
-.title-06{font-size:$font-size-04; color:$font-color-01; font-weight: 700;}
-.title-07{font-size:$font-size-02; color:$font-color-02; font-weight: 700;}
-.title-08{font-size:$font-size-03; color:$font-color-03; font-weight: 400;}
-.title-09{font-size:$font-size-01; color:$font-color-04; font-weight: 500;}
+.title-01{
+    font-size:var($font08); 
+    color:$font-color-01;
+}
+.title-02{
+    font-size:var($font07); 
+    color:$font-color-02;
+}
+.title-03{
+    font-size:var($font06); 
+    color:$font-color-03;
+}
+.title-04{
+    font-size:var($font06); 
+    color:$font-color-04; 
+    font-weight: 700;
+}
+.title-05{
+    font-size:var($font05); 
+    color:$font-color-red; 
+    font-weight: 700;
+} 
+.title-06{
+    font-size:var($font04); 
+    color:$font-color-01; 
+    font-weight: 700;
+}
+.title-07{
+    font-size:var($font02); 
+    color:$font-color-02; 
+    font-weight: 700;
+}
+.title-08{
+    font-size:var($font03); 
+    color:$font-color-03; 
+    font-weight: 400;
+}
+.title-09{
+    font-size:var($font01); 
+    color:$font-color-04; 
+    font-weight: 500;
+}
 
 
 /* tab */
@@ -142,3 +171,31 @@ pre.code {
     }
 }
 /* //tab */
+
+
+/* code 부분 */
+pre.code {
+    display:block;
+    position:relative;
+    z-index:0;
+    margin: 1rem 0 2rem;
+    padding: 1rem 2.5rem 1rem 1rem;
+    background-color: #f2f1f1;
+
+    code {
+        padding: 0;
+        background: none;
+        color: #1b1b1b;
+        .element{
+            color:#872bff
+        }
+        .key{
+            color:#d30038;
+        }
+    }
+    .hidden{
+        display:block; overflow:hidden; position:relative; left: -1px; top: -1px; z-index:-999; width:1px; height:1px; margin:0; padding:0; border:none;
+    }
+    .btn_copy{position:absolute; right:0; top:0; padding:10px; border:solid 1px #000; border-radius:5px; box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.1);}
+}
+/* //code 부분 */

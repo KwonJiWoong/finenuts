@@ -1,0 +1,44 @@
+/* 변수 선언 가능 */
+// font 컬러
+$font-color-01: #666;
+$font-color-02: #999;
+$font-color-03: #004e5a;
+$font-color-04: #006f80;
+$font-color-05: #222;
+$font-color-red: #e53e30;
+
+// border 컬러
+$border-color-01: #ebebeb;
+$border-color-02: #222;
+
+// background 컬러
+$background-color-01: #fff;
+$background-color-02: #222;
+
+/*반응형 화면 크기*/
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1024px;
+
+
+/*반응형, 브라우저 크기가 767px 이하일때*/
+@mixin mobile{
+    @media (max-width: $mobile){
+      @content;
+    }
+  }
+  
+  /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+  @mixin tablet{
+    @media (min-width: $mobile+1) and (max-width: $tablet){
+      @content;
+    }
+  }
+  
+  /*반응형, 브라우저 크기가 1024px 이상일때*/
+  @mixin desktop{
+    @media (min-width: $desktop){
+      @content;
+    }
+  }
+  

@@ -1,49 +1,58 @@
 @charset "UTF-8";
 /* 변수 선언 가능 */
-/* code 부분 */
-pre.code {
-  display: block;
-  position: relative;
-  z-index: 0;
-  margin: 1rem 0 2rem;
-  padding: 1rem 2.5rem 1rem 1rem;
-  background-color: #f2f1f1;
+/*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 767px 이하일때*/
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+/* 변수파일 */
+:root {
+  /*브라우저 사이즈767px이하일때*/
+  /*브라우저 사이즈1023px이하일때*/
+  /*브라우저 사이즈1024px이상일때*/
 }
-pre.code code {
-  padding: 0;
-  background: none;
-  color: #1b1b1b;
+@media (max-width: 767px) {
+  :root {
+    /* font 사이즈 */
+    --font-size-08: 35px;
+    --font-size-07: 30px;
+    --font-size-06: 22px;
+    --font-size-05: 16px;
+    --font-size-04: 16px;
+    --font-size-03: 14px;
+    --font-size-02: 12px;
+    --font-size-01: 12px;
+    --font-size-00: 12px;
+  }
 }
-pre.code code .element {
-  color: #872bff;
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    /* font 사이즈 */
+    --font-size-08: 40px;
+    --font-size-07: 30px;
+    --font-size-06: 25px;
+    --font-size-05: 20px;
+    --font-size-04: 18px;
+    --font-size-03: 16px;
+    --font-size-02: 16px;
+    --font-size-01: 16px;
+    --font-size-00: 14px;
+  }
 }
-pre.code code .key {
-  color: #d30038;
-}
-pre.code .hidden {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  left: -1px;
-  top: -1px;
-  z-index: -999;
-  width: 1px;
-  height: 1px;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-pre.code .btn_copy {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 10px;
-  border: solid 1px #000;
-  border-radius: 5px;
-  box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.1);
+@media (min-width: 1024px) {
+  :root {
+    /* font 사이즈 */
+    --font-size-08: 70px;
+    --font-size-07: 60px;
+    --font-size-06: 45px;
+    --font-size-05: 32px;
+    --font-size-04: 30px;
+    --font-size-03: 26px;
+    --font-size-02: 23px;
+    --font-size-01: 20px;
+    --font-size-00: 14px;
+  }
 }
 
-/* //code 부분 */
 .font-color-01 {
   color: #666;
 }
@@ -66,52 +75,52 @@ pre.code .btn_copy {
 }
 
 .title-01 {
-  font-size: 70px;
+  font-size: var(--font-size-08);
   color: #666;
 }
 
 .title-02 {
-  font-size: 60px;
+  font-size: var(--font-size-07);
   color: #999;
 }
 
 .title-03 {
-  font-size: 45px;
+  font-size: var(--font-size-06);
   color: #004e5a;
 }
 
 .title-04 {
-  font-size: 45px;
+  font-size: var(--font-size-06);
   color: #006f80;
   font-weight: 700;
 }
 
 .title-05 {
-  font-size: 32px;
+  font-size: var(--font-size-05);
   color: #e53e30;
   font-weight: 700;
 }
 
 .title-06 {
-  font-size: 30px;
+  font-size: var(--font-size-04);
   color: #666;
   font-weight: 700;
 }
 
 .title-07 {
-  font-size: 23px;
+  font-size: var(--font-size-02);
   color: #999;
   font-weight: 700;
 }
 
 .title-08 {
-  font-size: 26px;
+  font-size: var(--font-size-03);
   color: #004e5a;
   font-weight: 400;
 }
 
 .title-09 {
-  font-size: 20px;
+  font-size: var(--font-size-01);
   color: #006f80;
   font-weight: 500;
 }
@@ -182,3 +191,47 @@ pre.code .btn_copy {
 }
 
 /* //tab */
+/* code 부분 */
+pre.code {
+  display: block;
+  position: relative;
+  z-index: 0;
+  margin: 1rem 0 2rem;
+  padding: 1rem 2.5rem 1rem 1rem;
+  background-color: #f2f1f1;
+}
+pre.code code {
+  padding: 0;
+  background: none;
+  color: #1b1b1b;
+}
+pre.code code .element {
+  color: #872bff;
+}
+pre.code code .key {
+  color: #d30038;
+}
+pre.code .hidden {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  left: -1px;
+  top: -1px;
+  z-index: -999;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+pre.code .btn_copy {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  border: solid 1px #000;
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* //code 부분 */
