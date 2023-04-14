@@ -57,7 +57,10 @@ $ sass --watch --style compact input.css
 $ sass --watch --sourcemap
 ```
 
-## custom property / scss 활용한 가이드
+## 사용 예제
+<https://github.com/KwonJiWoong/finenuts/blob/main/scss_guide.md>
+
+## custom property / scss 활용한 예제
 1. css 소스
 해당 예시 주소
 <https://kwonjiwoong.github.io/finenuts/guide.html>
