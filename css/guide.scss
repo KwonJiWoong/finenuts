@@ -9,6 +9,7 @@ $font02: --font-size-02;
 $font01: --font-size-01;
 $font00: --font-size-00;
 
+// custom property 활용(font-size)
 :root{    
     /*브라우저 사이즈767px이하일때*/
     @include mobile{ 
@@ -50,8 +51,7 @@ $font00: --font-size-00;
         #{$font01}: 20px;
         #{$font00}: 14px;
     }
-  }
-
+}
 
 .font-color-01{color:$font-color-01;}
 .font-color-02{color:$font-color-02;}
@@ -92,7 +92,7 @@ $font00: --font-size-00;
     font-weight: 700;
 }
 .title-08{
-    font-size:var($font03); 
+    font-size:var($font03);
     color:$font-color-03; 
     font-weight: 400;
 }
