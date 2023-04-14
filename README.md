@@ -1,10 +1,10 @@
 # finenuts - 권지웅
 
-#scss 사용 방법(대표적인 두가지 방법)
+# scss 사용 방법(대표적인 두가지 방법)
 1. vscode 등 에디터에서 extension을 활용하여 sass(scss) Compiler를 사용한다.(vscode에서는 Live Sass Compiler)
 2. node.js를 활용하여 터미널에 "npm install -g sass"를 입력하여 설치한다.
 
-##세팅 방법
+## 세팅 방법
 1. 에디터 extension으로 설치 시 해당 settings.json 에서 포멧을 결정한다.(아래는 제 세팅 예시입니다.)
 ```
 {
