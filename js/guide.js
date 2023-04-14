@@ -1,6 +1,6 @@
-let ui;
+
 $(function(){
-    ui = {
+    let ui = {
         selectFunc : {
             el : {
                 tabWrap : $('.tab-motion'),
@@ -14,7 +14,7 @@ $(function(){
                 const $bar = element.siblings('.bar');
                 const $width = element.outerWidth(true);
                 const $left = element.position().left;  
-                $bar.stop().animate({ 'left':$left, 'width':$width }, 400); 
+                $bar.stop().animate({ 'left' : $left, 'width' : $width }, 400); 
             },
             initTabs : (element) => {
                 element.each(function(){
@@ -31,7 +31,6 @@ $(function(){
             clickEvt:(target)=> {
                 ui.selectFunc.selectTab(target);
             },
-            test:()=>{console.log('test')},/* 테스트용 소스 */
             init : () => {
                 ui.selectFunc.initTabs(ui.selectFunc.el.tabWrap);
                 $(ui.selectFunc.el.tabBtn).on('click', function(e){
@@ -42,7 +41,6 @@ $(function(){
             }
         }
     }
-
     /* 클립보드 복사용 */
     $('.btn_copy').on('click',function(){
         var content = $(this).siblings('.hidden').text();
@@ -55,9 +53,10 @@ $(function(){
         })
     });
     /* //클립보드 복사용 */
+    
     ui.selectFunc.init();
 });
 
-$(document).ready(function(){
-    ui.selectFunc.test();
-})
+// setTimeout(function(){
+//     ui.selectFunc.init();
+// },1000)

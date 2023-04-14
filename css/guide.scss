@@ -1,7 +1,33 @@
-$fontColor : font-color-;
-$fontSize : font-size-;
-$backgroundColor : background-color-;
-$borderColor : border-color-;
+/* 변수 선언 가능 */
+
+// font 컬러
+$font-color-01: #666;
+$font-color-02: #999;
+$font-color-03: #004e5a;
+$font-color-04: #006f80;
+$font-color-05: #222;
+$font-color-red: #e53e30;
+
+
+// font 사이즈
+$font-size-08: 70px;
+$font-size-07: 60px;
+$font-size-06: 45px;
+$font-size-06: 45px;
+$font-size-05: 32px;
+$font-size-04: 30px;
+$font-size-02: 23px;
+$font-size-03: 26px;
+$font-size-01: 20px;
+$font-size-00: 14px;
+
+// border 컬러
+$border-color-01: #ebebeb;
+$border-color-02: #222;
+
+// background 컬러
+$background-color-01: #fff;
+$background-color-02: #222;
 
 /* code 부분 */
 pre.code {
@@ -30,69 +56,57 @@ pre.code {
 }
 /* //code 부분 */
 
-:root{
-    --#{$fontColor}01: #666;
-    --#{$fontColor}02: #999;
-    --#{$fontColor}03: #004e5a;
-    --#{$fontColor}04: #006f80;
-    --#{$fontColor}05: #222;
-    --#{$fontColor}red: #e53e30;
 
-    --#{$fontSize}08: 70px;
-    --#{$fontSize}07: 60px;
-    --#{$fontSize}06: 45px;
-    --#{$fontSize}06: 45px;
-    --#{$fontSize}05: 32px;
-    --#{$fontSize}04: 30px;
-    --#{$fontSize}02: 23px;
-    --#{$fontSize}03: 26px;
-    --#{$fontSize}01: 20px;
-    --#{$fontSize}00: 14px;
+.font-color-01{color:$font-color-01;}
+.font-color-02{color:$font-color-02;}
+.font-color-03{color:$font-color-03;}
+.font-color-04{color:$font-color-01;}
+.font-color-red{color:$font-color-red; font-weight: 700;}
 
-    --#{$borderColor}01: #ebebeb;
-    --#{$borderColor}02: #222;
-
-    --#{$backgroundColor}01: #fff;
-    --#{$backgroundColor}02: #222;
-}
-
-.#{$fontColor}01{color:var(--#{$fontColor}01, #666);}
-.#{$fontColor}02{color:var(--#{$fontColor}02, #999);}
-.#{$fontColor}03{color:var(--#{$fontColor}03, #004e5a);}
-.#{$fontColor}04{color:var(--#{$fontColor}01, #006f80);}
-.#{$fontColor}red{color:var(--#{$fontColor}red, #e53e30); font-weight: 700;}
-
-.title-01{font-size:var(--#{$fontSize}8, 70px); color:var(#{$fontColor}01, #666);}
-.title-02{font-size:var(--#{$fontSize}7, 60px); color:var(#{$fontColor}02, #999);}
-.title-03{font-size:var(--#{$fontSize}6, 45px); color:var(#{$fontColor}03, #004e5a);}
-.title-04{font-size:var(--#{$fontSize}6, 45px); color:var(#{$fontColor}04, #006f80); font-weight: 700;}
-.title-05{font-size:var(--#{$fontSize}5, 32px); color:var(#{$fontColor}red, #666); font-weight: 700;} 
-.title-06{font-size:var(--#{$fontSize}4, 30px); color:var(#{$fontColor}01, #666); font-weight: 700;}
-.title-07{font-size:var(--#{$fontSize}2, 23px); color:var(#{$fontColor}02, #999); font-weight: 700;}
-.title-08{font-size:var(--#{$fontSize}3, 26px); color:var(#{$fontColor}03, #004e5a); font-weight: 400;}
-.title-09{font-size:var(--#{$fontSize}1, 20px); color:var(#{$fontColor}04, #006f80); font-weight: 500;}
+.title-01{font-size:$font-size-08; color:$font-color-01;}
+.title-02{font-size:$font-size-07; color:$font-color-02;}
+.title-03{font-size:$font-size-06; color:$font-color-03;}
+.title-04{font-size:$font-size-06; color:$font-color-04; font-weight: 700;}
+.title-05{font-size:$font-size-05; color:$font-color-red; font-weight: 700;} 
+.title-06{font-size:$font-size-04; color:$font-color-01; font-weight: 700;}
+.title-07{font-size:$font-size-02; color:$font-color-02; font-weight: 700;}
+.title-08{font-size:$font-size-03; color:$font-color-03; font-weight: 400;}
+.title-09{font-size:$font-size-01; color:$font-color-04; font-weight: 500;}
 
 
 /* tab */
-.tab-default{
+
+// 탭 메뉴 공통사항
+@mixin set-tab(){
     display: flex;
     position:relative;
     padding: 0 16px;
-    border-bottom: 1px solid var(--#{$borderColor}01);
-    background-color: var(--#{$backgroundColor});
+    border-bottom: 1px solid $border-color-01;
+    background-color: $background-color-01;
+}
+
+// 탭 메뉴 - 버튼 공통사항
+@mixin set-tab-btn(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    z-index:1;
+    // flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #999;
+}
+
+.tab-default{
+    @include set-tab();
     & > button,
     & > a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // flex: 1;
-        padding: 12px;
-        font-size: var(--#{$fontSize}00, 14px);
-        color: var(--#{$fontColor}02, #999);
-        font-weight: 700;
+        @include set-tab-btn();
         &.selected{
             position: relative;
-            color: var(--#{$fontColor}05);
+            color: $font-color-05;
         }
     }
     & > .bar{
@@ -100,28 +114,15 @@ pre.code {
         left:0; 
         bottom:0;
         height:1px;
-        background-color:var(--#{$backgroundColor}02);
+        background-color:$background-color-02;
     }
 }
 
 .tab-fill{
-    display: flex;
-    position:relative;
-    padding: 0 16px;
-    border-bottom: 1px solid var(--#{$borderColor}01);
-    background-color: var(--#{$backgroundColor});
+    @include set-tab();
     & > button,
     & > a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position:relative;
-        z-index:1;
-        // flex: 1;
-        padding: 12px;
-        font-size: 14px;
-        font-weight: 700;
-        color: #999;
+        @include set-tab-btn();
         &.selected{
             position: relative;
             color: #fff;
