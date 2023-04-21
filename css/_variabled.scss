@@ -1,4 +1,17 @@
-/* 변수 선언 가능 */
+/* _variabled.scss */
+/* _가 붙은 scss 파일은 변수만을 저장하는 파일로 인식된다. */
+
+// custom property 활용(font-size)
+$font08: --font-size-08;
+$font07: --font-size-07;
+$font06: --font-size-06;
+$font05: --font-size-05;
+$font04: --font-size-04;
+$font03: --font-size-03;
+$font02: --font-size-02;
+$font01: --font-size-01;
+$font00: --font-size-00;
+
 // font 컬러
 $font-color-01: #666;
 $font-color-02: #999;
