@@ -140,6 +140,33 @@ html, body{font-family:"Noto Sans KR", -apple-system, BlinkMacSystemFont, "Malgu
           </div>
         </div>
       </section>
+      <section>
+        <h1>3. range 캘린더</h1>
+        <div class="date-form rangeDate" data-select="true">
+          <button type="button" class="dateBtn" data-date="">YYYY-MM-DD</button>
+          <div class="calendar-form" style="display:none;">
+            <div class="calendar-wrap">
+              <button type="button" class="btn-close">닫기 버튼</button>
+              <div class="calendar-control">
+                <button type="button" class="btn-select currentYear"></button>
+                <ul class="calendar-select calendarSelect selectYear" style="display:none;"></ul>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-default prevYear">이전 년도</button>
+                  <button type="button" class="btn-black nextYear">다음 년도</button>
+                </div>
+                <button type="button" class="btn-select currentMonth"></button>
+                <ul class="calendar-select calendarSelect selectMonth" style="display:none;"></ul>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-default prevMonth">이전 달</button>
+                  <button type="button" class="btn-black nextMonth">다음 달</button>
+                </div>
+              </div>
+              <div class="calendar before"></div>
+              <div class="calendar after"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       <script>
         $('.dateBtn').on('click', function(){
           $(this).siblings('.calendar-form').show(400);
