@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>달력</title>
+  <script src="./js/jquery-3.6.4.min.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+</head>
+<style>
+/* font 정의 */
+@font-face {
+ font-family:"Noto Sans KR";
+ font-weight:"300";
+ font-style:normal;
+ src:url("./font/NotoSansKR-Light.otf") format("otf");
+}
+@font-face {
+ font-family:"Noto Sans KR";
+ font-weight:"400";
+ font-style:normal;
+ src:url("./font/NotoSansKR-Regular.otf") format("otf");
+}
+@font-face {
+ font-family:"Noto Sans KR";
+ font-weight:"500";
+ font-style:normal;
+ src:url("./font/NotoSansKR-Medium.otf") format("otf");
+}
+@font-face {
+ font-family:"Noto Sans KR";
+ font-weight:"700";
+ font-style:normal;
+ src:url("./font/NotoSansKR-Bold.otf") format("otf");
+}
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6{font-size:100%; font-weight:400;}
+ul{list-style:none;}
+button, input, select{margin:0;}
+button, a{cursor:pointer;}
+html{box-sizing:border-box;}
+*, :after, :before{box-sizing:inherit;}
+img, video{height:auto; max-width:100%;}
+iframe{border:0;}
+table{border-collapse:collapse; border-spacing:0;}
+td, th{padding:0;}
+*{margin:0; padding:0; border:0; box-sizing:border-box;}
+a{color:inherit; text-decoration:none;}
+a:hover{color:inherit;}
+address, em, i{font-style:normal;}
+
+/* form 관련 */
+input{border:solid 1px #000;}
+
+/* 버튼 관련 - btn */
+.btn-wrap{display:flex; justify-content:center; align-items:center; gap:10px;}
+button[class^=btn], 
+a[class^=btn]{display:flex; justify-content:center; align-items:center; min-width:100px; height:40px; padding:8px 15px; border-radius:4px; color:#fff; background-color:#828C9C; cursor:pointer;}
+button[class^=btn].btn-black, 
+a[class^=btn].btn-black{display:flex; justify-content:center; align-items:center; min-width:100px; height:40px; padding:8px 15px; border-radius:4px; color:#fff; background-color:#000; cursor:pointer;}
+button[class^=btn].btn-white, 
+a[class^=btn].btn-white{display:flex; justify-content:center; align-items:center; min-width:100px; height:40px; padding:8px 15px; border-radius:4px; color:#000; background-color:#fff; border:solid 1px #000; cursor:pointer;}
+
+/* body */
+html, body{font-family:"Noto Sans KR", -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", arial, dotum, 돋움, sans-serif; font-size:14px; color:#000; line-height:1.5; font-weight:400; height:100%;}
+.wrapper{height:100%;}
+.section_wrap{display:grid; grid-template-columns:1fr 1fr;}
+.calendar-wrap{display:flex; flex-direction:column; align-items:center; gap:20px; width:500px; padding:50px; border:solid 2px #000; border-radius:20px;}
+.calendar-control{display:flex; flex-direction:column; width:100%;}
+.calendar-control .btn-select{background:none; padding:20px; height:auto; color:#000;}
+.calendar-control .btn-select:after{content:'닫힘'; display:block;}
+.calendar-control .btn-select.open:after{content:'열림';}
+.calendar-control .calendar-select{display:flex; justify-content:center; flex-wrap:wrap; width:100%; height:200px; overflow:hidden scroll;}
+.calendar-control .calendar-select li{display:flex; justify-content:center; align-items:center; padding:10px;}
+.calendar-control .calendar-select button[class^=btn], 
+.calendar-control .calendar-select a[class^=btn]{min-width:80px;}
+.calendar-control .calendar-select .selected button{color:#fff; background-color:#000;}
+.calendar{display:grid; grid-template-columns:repeat(7, 40px); grid-template-rows:repeat(5, 40px);}
+.calendar > div{display:flex; justify-content:center; align-items:center; gap:0; position:relative; width:40px; height:40px; border-collapse:collapse;}
+.calendar > div.today button{font-weight:700;}
+.calendar > div:before{content:""; position:absolute; left:-1px; top:-1px; width:calc(100% + 1px); height:calc(100% + 1px); z-index:0; border:solid 1px #000;}
+.calendar > div.today:before{left:-2px; top:-2px; width:calc(100% + 2px); height:calc(100% + 2px); border-width:2px; border-color:red; z-index:1;}
+.calendar > div.disabled{color:#fff; background-color:gray;}
+.calendar > div > button{display:block; width:100%; height:100%; background:none; z-index:1; cursor:pointer;}
+</style>
+<body>
+  <div class="wrapper">
+    <div class="section_wrap">
+      <section>
+        <h1>1. 기본 캘린더</h1>
+        <div class="date-form dateSection">
+          <button type="button" class="dateBtn" data-date="">YYYY-MM-DD</button>
+          <div class="calendar-form" style="display:none;">
+            <div class="calendar-wrap">
+              <button type="button" class="btn-close">닫기 버튼</button>
+              <div class="calendar-control">
+                <p class="currentYear"></p>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-default prevYear">이전 년도</button>
+                  <button type="button" class="btn-black nextYear">다음 년도</button>
+                </div>
+                <p class="currentMonth"></p>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-default prevMonth">이전 달</button>
+                  <button type="button" class="btn-black nextMonth">다음 달</button>
+                </div>
+              </div>
+              <div class="calendar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h1>2. 셀렉트 캘린더</h1>
+        <div class="date-form dateSection" data-select="true">
+          <!-- 셀렉트 추가 예정 -->
+          <button type="button" class="dateBtn" data-date="">YYYY-MM-DD</button>
+          <div class="calendar-form" style="display:none;">
+            <div class="calendar-wrap">
+              <button type="button" class="btn-close">닫기 버튼</button>
+              <div class="calendar-control">
+                <button type="button" class="btn-select currentYear"></button>
+                <ul class="calendar-select calendarSelect selectYear" style="display:none;"></ul>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-default prevYear">이전 년도</button>
+                  <button type="button" class="btn-black nextYear">다음 년도</button>
+                </div>
+                <button type="button" class="btn-select currentMonth"></button>
+                <ul class="calendar-select calendarSelect selectMonth" style="display:none;"></ul>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-default prevMonth">이전 달</button>
+                  <button type="button" class="btn-black nextMonth">다음 달</button>
+                </div>
+              </div>
+              <div class="calendar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        $('.dateBtn').on('click', function(){
+          $(this).siblings('.calendar-form').show(400);
+          calendarFunc($(this).parents('.dateSection'));
+        });
+
+        $('.calendar-form .btn-close').on('click', function(){
+          $(this).parents('.calendar-form').hide(400);
+        });        
+        
+        function calendarFunc(el){
+          const $date = el;
+          $date.each(function(){
+            let $wrap = $(this);
+            const $dateBtn = $(this).find('.dateBtn').attr('data-date');
+            const $calendar = $(this).find('.calendar-form .calendar');
+            let setDate, currentYear, currentMonth, currentDay;
+
+            if(!$dateBtn){
+              setDate = new Date();
+              currentYear = Number(setDate.getFullYear());
+              currentMonth = Number(setDate.getMonth());
+              currentDay = Number(setDate.getDate());
+            }else{
+              setDate = new Date($dateBtn);
+              currentYear = Number(setDate.getFullYear());
+              currentMonth = Number(setDate.getMonth());
+              currentDay = Number(setDate.getDate());
+            }
+            if($calendar.children().length > 1){
+              $calendar.children().remove();
+            }
+            // 달력 계산(+-)
+            function dateSet(calcYear, calcMonth){
+              currentYear = Number(setDate.getFullYear());
+              currentMonth = Number(setDate.getMonth());
+              currentDay = Number(setDate.getDate());
+              if((currentMonth == 0 && calcMonth == -1) || (currentMonth == 11 && calcMonth == 1)) return false 
+              let fullDate = (currentYear + calcYear) + '-' + (currentMonth + 1 + calcMonth) + '-' + currentDay;
+              setDate = new Date(fullDate);
+              return setDate;
+            }
+
+            // 년,월,일 변경
+            function dateMove(year, month, day){
+              currentYear = year || currentYear;
+              currentMonth = month || currentMonth + 1;
+              currentDay = day || currentDay;
+              if(month < 10) currentMonth = '0'+currentMonth;
+              if(day < 10) currentDay = '0'+currentDay;
+              let fullDate = (currentYear) + '-' + (currentMonth) + '-' + currentDay;
+              setDate = new Date(fullDate);
+              dateSetting($wrap, setDate);
+            }
+
+            // 이전/다음(달, 년도) 버튼(+,-)
+            function calcDate(year = 0, month = 0){
+              if(month == -1){
+                // 이전 월
+                $calendar.children().remove();
+                dateSet(0, -1);
+                dateSetting($wrap, setDate);
+              }else if(month == 1){
+                // 다음 월
+                $calendar.children().remove();
+                dateSet(0, 1);
+                dateSetting($wrap, setDate);
+              }
+              if(year == -1){
+                // 이전 년도
+                $calendar.children().remove();
+                dateSet(-1, 0);
+                dateSetting($wrap, setDate);
+              }else if(year == 1){
+                // 다음 년도
+                $calendar.children().remove();
+                dateSet(1, 0);
+                dateSetting($wrap, setDate);
+              }
+            }
+
+            // 달력 세팅
+            function dateSetting(element, date){
+              // 버튼 value값 수정
+              const $dateBtn = $wrap.find('.dateBtn');
+              // 현재달의 날짜
+              const currentDate = date;
+              const currentYear = currentDate.getFullYear();
+              const currentMonth = currentDate.getMonth() + 1;
+              const currentDay = currentDate.getDate();
+              const dayWeek = ['일','월','화','수','목','금','토'];
+              
+              // 이전 달의 마지막 날 날짜와 요일 구하기
+              const startDate = new Date(currentYear, currentMonth - 1, 0);
+              const prevDate = startDate.getDate();
+              const prevtDay = new Date(currentYear, currentMonth - 1, 1).getDay();
+
+              // 이번 달의 마지막날 날짜와 요일 구하기
+              const endDay = new Date(currentYear, currentMonth, 0);
+              const nextDate = endDay.getDate();
+              const nextDay = Number(endDay.getDay());
+
+
+              const $currentYear = element.find('.currentYear');
+              const $currentMonth = element.find('.currentMonth');
+
+
+              $currentYear.text(currentYear + '년');
+              $currentMonth.text(currentMonth + '월');
+
+              
+              // 요일
+              for(i = 0; i < 7; i++){
+                $calendar.append(`<div class="weekend-0`+ i +`">` + dayWeek[i] + `</div>`);
+              }
+              // 이전달
+              for(i = prevDate - (prevtDay - 1); i <= prevDate; i++){
+                $calendar.append('<div class="disabled">'+ i +'</div>');
+              }
+              // 현재달
+              for(i = 1; i <= nextDate ;i++){
+                if(i !== currentDay){
+                  $calendar.append('<div><button>'+ i +'</button></div>');
+                }else{
+                  $calendar.append('<div class="today"><button>'+ i +'</button></div>');
+                }
+              }
+
+              // 다음달
+              for(i = 1; i < 7 - nextDay; i++){
+                $calendar.append('<div class="disabled">'+ i +'</div>');
+              }
+              
+              let dateBtnValue;
+              if(currentDay < 10 && currentMonth < 10) dateBtnValue = (currentYear+'-0'+currentMonth+'-0'+currentDay)
+              else if(currentMonth < 10) dateBtnValue = (currentYear+'-0'+currentMonth+'-'+currentDay)
+              else if(currentDay < 10) dateBtnValue = (currentYear+'-'+currentMonth+'-0'+currentDay)
+              else dateBtnValue = (currentYear+'-'+currentMonth+'-'+currentDay)
+              $dateBtn.attr('data-date',dateBtnValue).text(dateBtnValue);
+              $calendar.find('button').on('click', function(){
+                let $day = $(this).text();
+                dateMove(currentYear,currentMonth,$day);
+                $calendar.children().remove();
+                dateSetting($wrap, setDate);
+              })
+            }
+            
+            // 셀렉트 생성
+            function dateSelect(){
+                const $select = $wrap.find('.calendarSelect');
+                const $selectYear = $wrap.find('.selectYear');
+                const $selectMonth = $wrap.find('.selectMonth');
+
+                console.log($selectYear.children().length);
+                if($selectYear.children().length > 1) $selectYear.children().remove();
+                if($selectMonth.children().length > 1) $selectMonth.children().remove();
+
+                for(i = currentYear - 30; i < currentYear + 30; i++){
+                    if(currentYear !== i) $selectYear.append(`<li><button type="button" class="btn-white" data-year="`+i+`">`+i+`년</button></li>`);
+                    else $selectYear.append(`<li class="selected"><button type="button" class="btn-white" data-year="`+i+`">`+i+`년</button></li>`);
+                }
+                for(i = 1; i < 13; i++){
+                    if(currentMonth + 1 !== i) $selectMonth.append(`<li><button type="button" class="btn-white" data-month="`+i+`">`+i+`월</button></li>`);
+                    else $selectMonth.append(`<li class="selected"><button type="button" class="btn-white" data-month="`+i+`">`+i+`월</button></li>`);
+                }
+                $select.find('button').on('click', function(){
+                    const $year = $(this).attr('data-year');
+                    const $month = $(this).attr('data-month');
+                    $year ? currentYear = $year:currentYear;
+                    $month ? currentMonth = $month:currentMonth;
+                    
+                    $(this).parent().addClass('selected').siblings('.selected').removeClass('selected');
+                    $wrap.find('.dateBtn').attr('data-date',currentYear+`-`+currentMonth+`-`+currentDay).text(currentYear+`-`+currentMonth+`-`+currentDay+`년`);
+                    setDate = new Date(currentYear+`-`+currentMonth+`-`+currentDay);
+                    $calendar.children().remove();
+                    dateSetting($wrap, setDate);
+                });
+            }
+            // 초기 호출
+            dateSetting($wrap, setDate);
+            dateSelect($wrap);
+
+            // 클릭 이벤트
+            // 이전/다음, 년도/달 클릭시
+            $wrap.find('.calendar-control button').on('click', function(){
+              if($(this).hasClass('prevYear')) calcDate(-1,0)
+              if($(this).hasClass('nextYear')) calcDate(1,0)
+              if($(this).hasClass('prevMonth')) calcDate(0,-1)
+              if($(this).hasClass('nextMonth')) calcDate(0,1)
+            });
+            $wrap.find('.currentYear, .currentMonth').off().on('click',function(){
+              $(this).next('.calendarSelect').slideToggle(400);
+              $(this).toggleClass('open');
+            })
+          });
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
