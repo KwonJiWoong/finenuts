@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/video.css">
+    <script src="./js/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="logo">Video JS</h1>
+            <a class="btn-black" href="https://videojs.com/guides/setup/#options" target="_blank" title="새창으로 이동">video.js 기본 가이드</a>
+            <a class="btn-black" href="https://videojs.com/guides/player-workflows" target="_blank" title="새창으로 이동">video.js 고급 가이드</a>
+        </header>
+        <div class="section_wrap">
+            <section>
+                <div>
+                    <p>Videojs 사용 </p>
+                    <video id="ex-video" class="video-js">
+                      <source src="./img/dark_bg.mp4" type="video/mp4" />
+                      <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a
+                        web browser that
+                        <a href="https://videojs.com/html5-video-support/" target="_blank"
+                          >supports HTML5 video</a
+                        >
+                      </p>
+                    </video>
+                </div>
+                <button type="button" onclick="videoStart()">비디오 재생</button>
+                <button type="button" onclick="videoStop()">비디오 멈춤</button>
+            </section>
+            <section>
+                <div>
+                    <p>기본 video 태그 </p>
+                    <video id="ex-video" style="width:400px;" controls>
+                      <source src="./img/dark_bg.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <p>Videojs 사용 </p>
+                    <!-- videojs - 태그에서 data-setup을 통해 직접 옵션 전달 가능(스크립트 옵션과 동시에 사용 금지!) -->
+                    <video class="ex-video1 video-js" data-setup='{
+                        "controls": "true",
+                        "autoplay": "muted",
+                        "preload": "auto",
+                        "width": "400",
+                        "loop":"loop",
+                        "playbackRates":[0.5,1,1.5,2,10]}'>
+                      <source src="./img/dark_bg.mp4" type="video/mp4" />
+                      <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a
+                        web browser that
+                        <a href="https://videojs.com/html5-video-support/" target="_blank"
+                          >supports HTML5 video</a
+                        >
+                      </p>
+                    </video>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <p>Videojs 사용 </p>
+                    <!-- videojs - 태그에서 data-setup을 통해 직접 옵션 전달 가능(스크립트 옵션과 동시에 사용 금지!) -->
+                    <video class="ex-video2 video-js">
+                      <source src="./img/dark_bg.mp4" type="video/mp4" />
+                      <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a
+                        web browser that
+                        <a href="https://videojs.com/html5-video-support/" target="_blank"
+                          >supports HTML5 video</a
+                        >
+                      </p>
+                    </video>
+                </div>
+                <button type="button" onclick="videoFull()">전체화면</button>
+            </section>
+        </div>
+    </div>
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    <script>
+        // https://videojs.com/guides/setup/#options
+        // videojs - 스크립트에서 data-setup을 통해 직접 옵션 전달 가능(태그 옵션과 동시에 사용 금지!)
+        let exvideo = videojs('ex-video', {
+            controls: true, // 비디오 컨트롤 (true / false)
+            autoplay: true, // 비디오 자동재생 (true, false, muted)
+            preload: 'auto', //
+            width: '400',
+        });
+
+        // 비디오 재생
+        function videoStart(){
+            exvideo.play();
+        }
+
+        // 비디오 일시정지
+        function videoStop(){
+            exvideo.pause();
+            alert('현재 멈춘 초는 ' + exvideo.currentTime() + '입니다')
+        }
+        // 아이디 말고 클래스 사용시 document.querySelector 사용
+        let exvideo1 = videojs(document.querySelector('.ex-video1'),{});
+
+        let exvideo2 = videojs(document.querySelector('.ex-video2'),{
+            "controls": false,
+            "autoplay": "muted",
+            "preload": "auto",
+            "width": "400",
+            "loop":"loop",
+            "playbackRates":[0.5,1,1.5,2,10]
+        });
+        
+        exvideo1.on('ready', function() {
+            this.addClass('add_class');
+            // 준비되고 작성할 스크립트
+        });
+
+        function videoFull(){
+            exvideo1.requestFullscreen();
+        }
+    </script>
+</body>
+</html>
